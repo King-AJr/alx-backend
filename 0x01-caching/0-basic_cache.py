@@ -10,6 +10,7 @@ BaseCache = __import__("base_caching").BaseCaching
 class BasicCache(BaseCache):
     """inherits from BaseCaching
     and is a caching system"""
+
     def __init__(self):
         super().__init__()
 
