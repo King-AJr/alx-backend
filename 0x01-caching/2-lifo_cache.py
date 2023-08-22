@@ -2,29 +2,31 @@
 """
 inherits BasicCaching and
 is a caching system that
-implements FIFO
+implements LIFO
 """
 
 BasicCache = __import__("0-basic_cache").BasicCache
 
 
-class FIFOCache(BasicCache):
+class LIFOCache(BasicCache):
+    last_key = ""
+
     def __init__(self):
         super().__init__()
 
     def put(self, key, item):
         """Add an item in the cache
-        while implementing FIFO algorithm
+        while implementing LIFO algorithm
         for eviction"""
         if key is None or item is None:
             pass
 
         if len(self.cache_data) == self.MAX_ITEMS\
                 and key not in self.cache_data.keys():
-            first_key = next(iter(self.cache_data))
-            print("DISCARD: {}".format(first_key))
-            self.cache_data.pop(first_key)
+            print("DISCARD: {}".format(self.last_key))
+            self.cache_data.pop(self.last_key)
 
+        self.last_key = key
         self.cache_data[key] = item
 
     def get(self, key):
