@@ -33,6 +33,7 @@ class MRUCache(BaseCaching):
         self.cache_data[key] = value
 
     def get(self, key):
+        """Get an item by key"""
         if key in self.cache_data:
             value = self.cache_data.pop(key)
             self.cache_data[key] = value  # Move the accessed item to the end
