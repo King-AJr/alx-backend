@@ -2,6 +2,7 @@
 """ BaseCaching module
 """
 
+from collections import OrderedDict
 
 class BaseCaching:
     """BaseCaching defines:
@@ -13,7 +14,7 @@ class BaseCaching:
 
     def __init__(self):
         """Initiliaze"""
-        self.cache_data = {}
+        self.cache_data = OrderedDict()
 
     def print_cache(self):
         """Print the cache"""
