@@ -9,6 +9,10 @@ BaseCaching = __import__("base_caching").BaseCaching
 
 
 class LIFOCache(BaseCaching):
+    """
+    class to implement LIFO caching
+    algorithm
+    """
     last_key = ""
 
     def __init__(self):

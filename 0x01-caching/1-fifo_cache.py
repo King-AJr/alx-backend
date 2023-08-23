@@ -9,6 +9,10 @@ BaseCaching = __import__("base_caching").BaseCaching
 
 
 class FIFOCache(BaseCaching):
+    """
+    class to implement FIFO caching
+    algorithm
+    """
     def __init__(self):
         super().__init__()
 
