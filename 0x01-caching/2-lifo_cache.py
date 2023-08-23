@@ -5,10 +5,10 @@ is a caching system that
 implements LIFO
 """
 
-BasicCache = __import__("0-basic_cache").BasicCache
+BaseCaching = __import__("base_caching").BaseCaching
 
 
-class LIFOCache(BasicCache):
+class LIFOCache(BaseCaching):
     last_key = ""
 
     def __init__(self):

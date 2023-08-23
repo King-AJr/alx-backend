@@ -5,10 +5,10 @@ is a caching system that
 implements FIFO
 """
 
-BasicCache = __import__("0-basic_cache").BasicCache
+BaseCaching = __import__("base_caching").BaseCaching
 
 
-class FIFOCache(BasicCache):
+class FIFOCache(BaseCaching):
     def __init__(self):
         super().__init__()
 
