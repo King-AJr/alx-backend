@@ -21,6 +21,9 @@ class LRUCache(BaseCaching):
         super().__init__()
 
     def put(self, key, value):
+        """Add an item in the cache
+        while implementing LRU algorithm
+        for eviction"""
         if key in self.cache:
             # If key already exists, move it to the end and update the value
             self.cache.pop(key)
