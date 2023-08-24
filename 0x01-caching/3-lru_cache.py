@@ -41,4 +41,5 @@ class LRUCache(BaseCaching):
             self.cache_data[key] = value  # Move the accessed item to the beginning
             self.cache_data = self.cache_data
             return key
+        
         return None
