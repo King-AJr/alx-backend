@@ -28,7 +28,7 @@ class LRUCache(BaseCaching):
         if key in self.cache_data:
             # If key already exists, move it to the end and update the value
             self.cache_data.pop(key)
-        elif len(self.cache) >= self.MAX_ITEMS:
+        elif len(self.cache_data) == self.MAX_ITEMS:
             # If cache is full, remove the first (least recently used) item
             discarded_key, discarded_value = self.cache_data.popitem(last=False)
             print("DISCARD: {}".format(discarded_key))

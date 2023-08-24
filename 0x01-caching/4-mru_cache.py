@@ -33,7 +33,7 @@ class MRUCache(BaseCaching):
             # If cache is full, remove the first (least recently used) item
             discarded_key, discarded_value = self.cache_data.popitem(last=True)
             print("DISCARD: {}".format(discarded_key))
-        self.cache_data[key] = value
+        self.cache_data[key] = item
 
     def get(self, key):
         """Get an item by key"""
