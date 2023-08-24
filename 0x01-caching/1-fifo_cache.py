@@ -21,7 +21,7 @@ class FIFOCache(BaseCaching):
         while implementing FIFO algorithm
         for eviction"""
         if key is None or item is None:
-            pass
+            return
 
         if len(self.cache_data) == self.MAX_ITEMS\
                 and key not in self.cache_data.keys():

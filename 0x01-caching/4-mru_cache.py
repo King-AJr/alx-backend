@@ -19,10 +19,13 @@ class MRUCache(BaseCaching):
     def __init__(self):
         super().__init__()
 
-    def put(self, key, value):
+    def put(self, key, item):
         """Add an item in the cache
         while implementing MRU algorithm
         for eviction"""
+
+        if key is None or item is None:
+            return
         if key in self.cache_data:
             # If key already exists, move it to the end and update the value
             self.cache_data.pop(key)
