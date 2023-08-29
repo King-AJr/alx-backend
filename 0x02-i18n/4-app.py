@@ -28,7 +28,10 @@ def get_locale():
     find specific locale
     from client
     """
-    request.accept_languages.best_match(Config.LANGUAGES)
+    if "locale" in request.args:
+        if request.args['locale'] in Config.LANGUAGES:
+            return request.args["locale"]
+        request.accept_languages.best_match(Config.LANGUAGES)
 
 
 @app.route("/")
@@ -36,7 +39,7 @@ def index():
     """
     render template
     """
-    return render_template("3-index.html")
+    return render_template("4-index.html")
 
 
 if __name__ == "__main__":
