@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-import sys 
+import sys
+
 print(sys.executable)
 # print(sys.path)
