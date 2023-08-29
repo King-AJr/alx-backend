@@ -40,6 +40,9 @@ def get_locale():
         if request.args['locale'] in Config.LANGUAGES:
             return request.args["locale"]
         request.accept_languages.best_match(Config.LANGUAGES)
+    if g.user:
+        if g.user.get('locale') in Config.LANGUAGES:
+            return g.user.get('locale')
 
 
 def get_user():
