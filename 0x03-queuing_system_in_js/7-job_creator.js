@@ -1,6 +1,6 @@
 import { createQueue } from "kue";
 
-const queue = createQueue();
+const queue = createQueue({ name: 'push_notification_code_2' });
 
 const jobs = [
     {
@@ -49,8 +49,8 @@ const jobs = [
     }
   ];
 
-  for (let i = 0; i < jobs.length; i++) {
-    const job = queue.create('push_notification_code_2', jobs[i]);
+  for (const jobInfo of jobs) {
+    const job = queue.create('push_notification_code_2', jobInfo);
     job.on('enqueue', () => {
         console.log(`Notification job created: ${job.id}`)
     })
